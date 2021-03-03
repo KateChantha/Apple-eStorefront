@@ -110,7 +110,7 @@ html {
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  clip-path: polygon(
+  /* clip-path: polygon(
     50% 0%,
     81% 5%,
     100% 0,
@@ -121,7 +121,7 @@ html {
     0 100%,
     0 0,
     23% 5%
-  );
+  ); */
   transition: clip-path 0.5s;
 }
 
