@@ -90,6 +90,13 @@ html {
 .back-side {
   transform: translateZ(-5rem);
 }
+
+.back-side i {
+  font-size: 12rem;
+  color: var(--primary-color);
+  text-shadow: 0.1rem 0.1rem 0.2rem #aaa, -0.1rem -0.1rem 0.2rem #aaa;
+  transform: rotateY(180deg);
+}
 /* End of Cube */
 
 /* Navbar */
