@@ -65,7 +65,7 @@ html {
   background-color: red;
   /* to be able to receive perpective from parent */
   transform-style: preserve-3d;
-  transform: rotateY(70deg);
+  transform: rotateX(91deg);
 }
 
 .front-side,
@@ -74,11 +74,38 @@ html {
   height: 100%;
   background-color: #fee;
   position: absolute;
+  transform-style: preserve-3d;
 }
 
 .front-side {
   padding: 2.5rem;
   transform: translateZ(5rem);
+}
+
+.front-side::before,
+.front-side::after {
+  content: "";
+  width: 100%;
+  /* height: to accomodate 
+  front-side ranslateZ(5rem)
+  & front-side ranslateZ(-5rem)*/
+  height: 10rem;
+  background-color: #fee;
+  position: absolute;
+  
+}
+
+.front-side::before {
+  top: 0;
+  left: 0;
+  transform: rotateX(-90deg);
+  transform-origin: top;
+}
+.front-side::after {
+  bottom: 0;
+  left: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
 }
 
 .front-side img {

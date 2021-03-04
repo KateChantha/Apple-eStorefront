@@ -15,18 +15,34 @@ This project was built with pure JavaScript.
   perspective: 100rem;
 }
 ```
-and .cube(child) with perspective-3d
+and .cube(child) with preserve-3d
 ```
 .cube {
   transform-style: preserve-3d;
 }
 ```
-- .font-side and .back-side is offset 5rem form the .cube core center position.
+- .font-side and .back-side is offset 5rem form the .cube position (the origin/ center of the tranformation).
 ```
 .front-side {
   transform: translateZ(5rem);
 }
 .back-side {
   transform: translateZ(-5rem);
+}
+```
+4. The thickness of the cube.
+- Make sure childs of the .cube-wrapper that is .front-side and .back-side has preserve-3d value
+```
+.front-side,
+.back-side {
+  transform-style: preserve-3d;
+}
+```
+- use ::before and ::after to target top&bottom sides of the cube. Thickness of the cube 'height: 10rem;' determined by front-side ranslateZ(5rem) & front-side ranslateZ(-5rem). 
+- Then move the origin down so that the edge is touch the back-face. To do that by 'transform-origin: top;'
+```
+.front-side::before {
+  height: 10rem;
+  transform-origin: top;
 }
 ```
